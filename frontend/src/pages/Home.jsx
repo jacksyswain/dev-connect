@@ -1,5 +1,6 @@
 import Navbar from "../components/NavBar";
 import { Link } from "react-router-dom";
+import JobList from "../components/JobList";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col justify-center items-center text-center px-6">
+      <main className="flex-1 flex flex-col justify-center items-center text-center px-6 py-12">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           Connect Employers and Job Seekers
         </h2>
@@ -16,7 +17,7 @@ export default function Home() {
           their dream jobs seamlessly.
         </p>
 
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-10">
           <Link
             to="/register"
             className="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition"
@@ -36,6 +37,12 @@ export default function Home() {
             Sign Up
           </Link>
         </div>
+
+        {/* Job Listings Section */}
+        <section className="w-full max-w-6xl">
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-left">Latest Jobs</h3>
+          <JobList />
+        </section>
       </main>
 
       {/* Footer */}
