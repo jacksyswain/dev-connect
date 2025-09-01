@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../api"; // your axios instance
+import api from "../api/axios"; // your axios instance
 import JobCard from "./JobCard";
 
 const JobList = () => {
@@ -13,7 +13,7 @@ const JobList = () => {
         const res = await api.get("/jobs"); // backend endpoint /api/jobs
         setJobs(res.data);
       } catch (err) {
-        setError("Failed to fetch jobs. Try again later.");
+        setError("Failed to fetch jobs. Try again later.", err);
       } finally {
         setLoading(false);
       }

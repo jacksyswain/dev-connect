@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Homelout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -13,10 +13,13 @@ function App() {
   return (
     <Routes>
       {/* Public page */}
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Homelout />} />
+      <Route path="/Profile" element={<Profile />} />
+      <Route path="/PostJob" element={<PostJob />} />
+      <Route path="/Dashboard" element={<Dashboard />} />
 
-      {/* Login/Register for guests only */}
-      <Route
+      
+    <Route
         path="/login"
         element={
           <GuestRoute>
